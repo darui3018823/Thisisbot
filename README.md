@@ -3,6 +3,17 @@
 気分で消します。ははは
 <br>
 
+## 目次
+- [概要](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E6%A6%82%E8%A6%81)
+- [インストール方法](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95)
+- [使い方](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E4%BD%BF%E3%81%84%E6%96%B9)
+- [設定](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E8%A8%AD%E5%AE%9A)
+- [機能一覧](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E6%A9%9F%E8%83%BD%E4%B8%80%E8%A6%A7)
+- [ライセンス](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
+- [貢献](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E8%B2%A2%E7%8C%AE)
+- [最終更新日](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E6%9C%80%E7%B5%82%E6%9B%B4%E6%96%B0%E6%97%A5)
+
+<br>
 ## 概要
 このボットはPython Runnerや絶対パスを指定して実行するなど、多様な用途をWindows上で実行可能です。<br>
 macOSには一部対応していない可能性がありますので、開発環境の問題についてご了承ください。<br><br>
@@ -53,4 +64,4 @@ Discord上で以下のコマンドを実行していただければと思いま�
 MITライセンスなどの特定の記載がある場合を除き、README.mdの最終更新日より効力が発生します。<br>
 <br>
 ## 最終更新日
-2024/11/01 1:00
+2024/11/01 1:10
