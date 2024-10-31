@@ -34,7 +34,7 @@ Discord上で以下のコマンドを実行していただければと思いま�
 - `/cmdlist all`
 
 ## ライセンス
-このプロジェクトはMITライセンスの下で提供されています。
+このプロジェクトは[MITライセンス](https://github.com/darui3018823/Thisisbot?tab=License-1-ov-file)の下で提供されています。
 
 - 必要な箇所（UserIDやドライバー等の絶対・相対パスなど）を除き、改変を行ってはなりません。
   - 例外としてbatファイルとbotのprefixのみ改変が可能です。
