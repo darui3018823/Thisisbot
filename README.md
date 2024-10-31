@@ -9,8 +9,11 @@ macOSには一部対応していない可能性がありますので、開発環
 
 ## インストール方法
 以下のリンクを参照して、venvを利用してください。<br>
-
-[venvのダウンロード](https://github.com/darui3018823/Thisisbot/releases/download/2.3.2/venv_3.12.7.zip)
+[venvのダウンロード](https://github.com/darui3018823/Thisisbot/releases/download/2.3.2/venv_3.12.7.zip)<br>
+<br>
+venvを使わない場合は以下をコマンドプロンプトにて実行してください。<br>
+確実に可能だとわかっているのはPython [3.12.7](https://www.python.org/downloads/release/python-3127/)です。<br>
+`pip install discord httpcore ipinfo pytz requests googletrans psutil wmi Pillow GPUtil selenium`<br>
 
 ## 使い方
 コードは私自身の使用を目的としているため、至らない点がございましたらご指摘いただけると幸いです。<br>
