@@ -14,6 +14,7 @@
 - [最終更新日](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E6%9C%80%E7%B5%82%E6%9B%B4%E6%96%B0%E6%97%A5)
 
 <br>
+
 ## 概要
 このボットはPython Runnerや絶対パスを指定して実行するなど、多様な用途をWindows上で実行可能です。<br>
 macOSには一部対応していない可能性がありますので、開発環境の問題についてご了承ください。<br><br>
