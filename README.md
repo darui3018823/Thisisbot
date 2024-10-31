@@ -10,7 +10,7 @@
 - [設定](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E8%A8%AD%E5%AE%9A)
 - [機能一覧](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E6%A9%9F%E8%83%BD%E4%B8%80%E8%A6%A7)
 - [ライセンス](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
-- [問い合わせ](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E8%B2%A2%E7%8C%AE)
+- [問い合わせ](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#問い合わせ)
 - [最終更新日](https://github.com/darui3018823/Thisisbot?tab=readme-ov-file#%E6%9C%80%E7%B5%82%E6%9B%B4%E6%96%B0%E6%97%A5)
 
 <br>
