@@ -23,13 +23,20 @@ SOFTWARE.
 ## Libraries Used
 This bot primarily utilizes the `discord.py` library, along with the following libraries:
 
+- `asyncio`
 - `discord`
+- `os`
+- `subprocess`
+- `datetime`
 - `httpcore`
 - `ipinfo`
+- `logging`
+- `io`
 - `pytz`
 - `requests`
 - `googletrans`
 - `psutil`
+- `time`
 - `wmi`
 - `Pillow`
 - `GPUtil`
