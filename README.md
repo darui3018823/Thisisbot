@@ -69,5 +69,13 @@ Discord上で以下のコマンドを実行していただければと思いま�
 <br>
 MITライセンスなどの特定の記載がある場合を除き、README.mdの最終更新日より効力が発生します。<br>
 <br>
+
+## 関連ファイル
+- [利用規約](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md)
+- [プライバシーポリシー](https://github.com/darui3018823/Thisisbot/blob/main/Privacy-Policy.md)
+- [MITライセンス](https://github.com/darui3018823/Thisisbot?tab=License-1-ov-file)
+<br>
+<br>
+
 ## 最終更新日
 2024/11/01 1:10
