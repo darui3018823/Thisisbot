@@ -11,8 +11,8 @@
   - [v2.0.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v20x)
   - [v2.3.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v23x)
   - [v2.4.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v24x)
-- [注意事項]()
-- [最終更新]()
+- [注意事項](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85)
+- [最終更新](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#%E6%9C%80%E7%B5%82%E6%9B%B4%E6%96%B0)
 <br>
 
 ## サポート内容
