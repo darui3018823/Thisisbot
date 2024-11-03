@@ -4,7 +4,7 @@
 
 ## 目次
 - [1. はじめに](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#1-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)
-- [2.利用条件](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#2-%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6)
+- [2. 利用条件](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#2-%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6)
 - [3. 禁止事項](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#3-%E7%A6%81%E6%AD%A2%E4%BA%8B%E9%A0%85)
 - [4. 情報の提供について](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#4-%E6%83%85%E5%A0%B1%E3%81%AE%E6%8F%90%E4%BE%9B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
 - [5. 免責事項](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#5-%E5%85%8D%E8%B2%AC%E4%BA%8B%E9%A0%85)
