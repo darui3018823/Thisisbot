@@ -11,6 +11,11 @@ This is bot Source Codes（以下「本Botコード」といいます）に関�
 
 ## 目次
 - [1. 情報収集について](https://github.com/darui3018823/Thisisbot/blob/main/Privacy-Policy.md#1-%E6%83%85%E5%A0%B1%E3%81%AE%E5%8F%8E%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+- [2. 情報の利用目的](https://github.com/darui3018823/Thisisbot/blob/main/Privacy-Policy.md#2-%E6%83%85%E5%A0%B1%E3%81%AE%E5%88%A9%E7%94%A8%E7%9B%AE%E7%9A%84)
+- [3. 第三者への情報提供](https://github.com/darui3018823/Thisisbot/blob/main/Privacy-Policy.md#3-%E7%AC%AC%E4%B8%89%E8%80%85%E3%81%B8%E3%81%AE%E6%83%85%E5%A0%B1%E6%8F%90%E4%BE%9B)
+- [4. データの保護](https://github.com/darui3018823/Thisisbot/blob/main/Privacy-Policy.md#4-%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E4%BF%9D%E8%AD%B7)
+- [5. プライバシーポリシーの変更](https://github.com/darui3018823/Thisisbot/blob/main/Privacy-Policy.md#5-%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC%E3%81%AE%E5%A4%89%E6%9B%B4)
+- [6. お問い合わせ](https://github.com/darui3018823/Thisisbot/blob/main/Privacy-Policy.md#6-%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B)
 <br>
 
 ## 1. 情報の収集について
