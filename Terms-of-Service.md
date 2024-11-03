@@ -3,6 +3,9 @@
 <br>
 
 ## 目次
+- [はじめに](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#1-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)
+- [利用条件](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#2-%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6)
+<br>
 
 
 
