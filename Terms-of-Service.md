@@ -3,9 +3,17 @@
 <br>
 
 ## 目次
-- [はじめに](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#1-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)
-- [利用条件](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#2-%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6)
-- [禁止事項](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#3-%E7%A6%81%E6%AD%A2%E4%BA%8B%E9%A0%85)
+- [1. はじめに](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#1-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)
+- [2.利用条件](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#2-%E5%88%A9%E7%94%A8%E6%9D%A1%E4%BB%B6)
+- [3. 禁止事項](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#3-%E7%A6%81%E6%AD%A2%E4%BA%8B%E9%A0%85)
+- [4. 情報の提供について](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#4-%E6%83%85%E5%A0%B1%E3%81%AE%E6%8F%90%E4%BE%9B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+- [5. 免責事項](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#5-%E5%85%8D%E8%B2%AC%E4%BA%8B%E9%A0%85)
+- [6. サービスの停止および終了](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#6-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%81%9C%E6%AD%A2%E3%81%8A%E3%82%88%E3%81%B3%E7%B5%82%E4%BA%86)
+- [7. 更新について](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#7-%E6%9B%B4%E6%96%B0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+- [8. 著作権およびライセンス](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#8-%E8%91%97%E4%BD%9C%E6%A8%A9%E3%81%8A%E3%82%88%E3%81%B3%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9)
+- [9. フィードバック](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#9-%E3%83%95%E3%82%A3%E3%83%BC%E3%83%89%E3%83%90%E3%83%83%E3%82%AF)
+- [10. お問い合わせ](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#10-%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B)
+- [11. 規約の発効および最終更新日](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md#11-%E8%A6%8F%E7%B4%84%E3%81%AE%E7%99%BA%E5%8A%B9%E3%81%8A%E3%82%88%E3%81%B3%E6%9C%80%E7%B5%82%E6%9B%B4%E6%96%B0%E6%97%A5)
 <br>
 
 
