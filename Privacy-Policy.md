@@ -10,7 +10,7 @@ This is bot Source Codes（以下「本Botコード」といいます）に関�
 <br>
 
 ## 目次
-- [a](a)
+- [1. 情報収集について](https://github.com/darui3018823/Thisisbot/blob/main/Privacy-Policy.md#1-%E6%83%85%E5%A0%B1%E3%81%AE%E5%8F%8E%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
 <br>
 
 ## 1. 情報の収集について
