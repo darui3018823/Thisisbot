@@ -4,6 +4,17 @@
 リリース日はそのバージョンのメインファイルが更新された最後の日です。<br>
 <br>
 
+## 目次
+- [サポート内容](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E5%86%85%E5%AE%B9)
+- [サポート状況](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E7%8A%B6%E6%B3%81)
+  - [v1.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v1x)
+  - [v2.0.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v20x)
+  - [v2.3.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v23x)
+  - [v2.4.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v24x)
+- [注意事項]()
+- [最終更新]()
+<br>
+
 ## サポート内容
 This is bot Source Code(以下「本コード」)のサポート内容は以下の通りです。<br>
 - 本コードの動作問題
@@ -80,3 +91,20 @@ This is bot Source Code(以下「本コード」)のサポート内容は以下�
       - 本バージョンのLatest化は**2024年内を目標にしておりますが**できないかもしれないですね。
       - 本バージョンのサポート終了はまだ予定されていません。
   
+## 注意事項
+- Stable
+  - 最も安定しているもの。サポートは勿論されます。
+- Latest
+  - Stableの安定性を持ちつつパフォーマンスが優れています。
+  - 私のコードではStableよりもLatestをお勧めします。
+-  Pre-Release
+  -  ある程度のデバッグはしてから出しますが不安定です。
+- Beta
+  - かなり不安定です。
+  - まともに動けばいいですね(笑)
+-  Alpha
+  - 多分お話にならないと思う
+<br>
+
+## 最終更新
+24/11/04 4:20(JST)
