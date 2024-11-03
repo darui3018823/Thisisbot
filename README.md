@@ -76,6 +76,7 @@ MITライセンスなどの特定の記載がある場合を除き、README.md�
 - [利用規約](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md)
 - [プライバシーポリシー](https://github.com/darui3018823/Thisisbot/blob/main/Privacy-Policy.md)
 - [MITライセンス](https://github.com/darui3018823/Thisisbot?tab=License-1-ov-file)
+- [サポートバージョン](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md)
 <br>
 
 ## 最終更新日
