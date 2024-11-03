@@ -75,7 +75,6 @@ MITライセンスなどの特定の記載がある場合を除き、README.md�
 - [プライバシーポリシー](https://github.com/darui3018823/Thisisbot/blob/main/Privacy-Policy.md)
 - [MITライセンス](https://github.com/darui3018823/Thisisbot?tab=License-1-ov-file)
 <br>
-<br>
 
 ## 最終更新日
 2024/11/01 1:10
