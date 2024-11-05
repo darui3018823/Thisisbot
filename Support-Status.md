@@ -83,7 +83,7 @@ This is bot Source Code(以下「本コード」)のサポート内容は以下�
 
 ### v2.4.x
 - v2.4.0-PR
-  - サポート状況: Pre=Release(PR)
+  - サポート状況: Pre-Release(PR)
   - リリース日: 24/11/04
   - 主な機能等: [こちら](https://github.com/darui3018823/Thisisbot/releases/tag/2.4.0)をご確認ください。
     - 備考:
