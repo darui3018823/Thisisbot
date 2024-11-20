@@ -53,12 +53,11 @@ class PythonRunner(commands.Cog):
         async def run_code():
             with contextlib.redirect_stdout(f):
                 try:
-                    # 非同期タスクとしてコードを実行
+                    # execを使ってコードを実行
                     exec(code, globals())
                 except Exception as e:
                     output = f'エラー: {e}'
                     log_message += f'Py Output: {output}\n-----'
-                    print(log_message)
                     await ctx.send(f'Python Output:\n{output}')
                     return
 
@@ -73,7 +72,7 @@ class PythonRunner(commands.Cog):
         log_message += f'Py Output: {output}\n-----'
         print(log_message)
 
-        if len(output) > 2000:
+        if len(output) > 100:
             # pylog フォルダを作成する
             pylog_dir = 'C:/Users/user/vsc/fullcode/pylog'  # 絶対パスに変更
             if not os.path.exists(pylog_dir):
@@ -85,12 +84,15 @@ class PythonRunner(commands.Cog):
             log_filename = os.path.join(pylog_dir, f'{timestamp}.txt')  # 絶対パスを指定
 
             # ログファイルに出力を保存
-            with open(log_filename, 'w', encoding='utf-8') as log_file:
-                log_file.write(output)
+            try:
+                with open(log_filename, 'w', encoding='utf-8') as log_file:
+                    log_file.write(output)
 
-            # ログファイルを添付
-            with open(log_filename, 'rb') as log_file:
-                await ctx.send('出力が長すぎるため、ログファイルを添付します。', file=discord.File(log_file, log_filename))
+                # ログファイルを添付
+                with open(log_filename, 'rb') as log_file:
+                    await ctx.send('出力が長すぎるため、ログファイルを添付します。', file=discord.File(log_file, log_filename))
+            except Exception as e:
+                await ctx.send(f'ログファイルの保存中にエラーが発生しました: {e}')
         else:
             await ctx.send(f'Python Output:\n{output}')
 

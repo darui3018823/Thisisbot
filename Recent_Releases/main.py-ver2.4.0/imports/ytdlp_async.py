@@ -35,7 +35,7 @@ async def send_complete_embed(interaction, url):
     CompleteEmbed.add_field(name="Video URL", value=url, inline=False)
     CompleteEmbed.set_footer(text="Powered by yt-dlp, ffmpeg")
     await interaction.followup.send(embed=CompleteEmbed)
-async def download_failure_embed(interaction, url, result):
+async def download_failure_embed(interaction, url, result, RunningUser):
     #エラーメッセージの処理
     def Text_Check(text):
         # 文字数を確認
@@ -71,3 +71,10 @@ def extract_first_url(message_content):
     url_pattern = r'(https?://[^\s]+)'
     urls = re.findall(url_pattern, message_content)
     return urls[0] if urls else None
+async def FUCKYOU(interaction):
+    embed = discord.Embed(
+        title="yt-dlp.exe",
+        description="You are not a registered user!"
+    )
+    
+    await interaction.response.send_message(embed=embed)

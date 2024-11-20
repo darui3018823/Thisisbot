@@ -2,6 +2,7 @@ from datetime import datetime
 import json
 import sys
 import os
+import requests
 
 # Read perm.json
 def load_permissions():
@@ -63,3 +64,20 @@ def get_current_directory():
 def is_virtual_env():
     # 仮想環境かどうかを確認
     return sys.prefix != sys.base_prefix
+
+#バージョンの情報を取得
+def fetch_version_info(url):
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+
+        # JSONデータの値を順に取り出し、リストに変換
+        version_info_list = [data[key] for key in sorted(data.keys(), key=int)]
+        
+        # 改行して結合し、文字列として返す
+        return "\n".join(version_info_list)
+
+    except requests.exceptions.RequestException as e:
+        print("バージョン情報の取得に失敗しました:", e)
+        return None

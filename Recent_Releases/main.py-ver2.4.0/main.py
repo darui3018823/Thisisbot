@@ -1,15 +1,18 @@
 import asyncio
+from pydoc import text
 import random
 import re
 import shlex
+import string
+from tabnanny import check
 from typing import Optional
 import discord
 from discord.ext import commands
-from discord import Attachment, File, Interaction, app_commands
+from discord import Attachment, File, Interaction, app_commands, version_info
 import os
 import subprocess
 import json
-from datetime import datetime,timedelta
+from datetime import date, datetime,timedelta
 from httpcore import TimeoutException
 import ipinfo
 import logging
@@ -33,18 +36,23 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from imports.calc import safe_eval
 from imports.downloader import download_video 
 from imports.log_func import log_command
 from imports.random_async import(
-    Argument_is_None_Embed, None_Check_Process, Running_Random_Choice, Success_Embed_Send, Unknown_Error, ve_Embed
+    Argument_is_None_Embed, None_Check_Process,
+    Running_Random_Choice, Success_Embed_Send,
+    Unknown_Error, ve_Embed
     )
+from imports.userinfo import get_user_info_embed
 from imports.ytdlp_async import(
-    extract_first_url, get_drive_usage,
+    FUCKYOU, extract_first_url, get_drive_usage,
     send_downloading_embed, send_complete_embed,
     download_failure_embed, HelpMessage_Embed
     )
 from imports.preload import(
-    get_current_directory, get_python_version,
+    fetch_version_info, get_current_directory,
+    get_python_version,
     is_virtual_env, load_permissions,
     load_blacklist, save_blacklist,
     load_commands_json, convert_link,
@@ -53,17 +61,24 @@ from imports.preload import(
 
 translator = Translator()
 intents = discord.Intents.default()
+intents.guilds = True
+intents.members = True  # メンバー情報の取得を有効化
+intents.guild_messages = True
 intents.message_content = True
-ipinfo_access_token = 'Token'
+ipinfo_access_token = 'ipinfo_token'
 daruksstatustime = datetime.now()
 
 bot = commands.Bot(command_prefix='daruks!', intents=intents)
-daruks = 973782871963762698
+daruks = 973782871963762698 # Your User ID
 start_time = datetime.now()
 ipinfo_handler = ipinfo.getHandler(ipinfo_access_token)
-botversion = 'Ver.2.4.0 Beta'
+botversion = 'Ver.2.4.0 Pre-Release 2'
 PowerShellVersion = '5.1.22621'
 GECKODRIVER_PATH = 'C:/geckodriver/geckodriver.exe'
+version_url = 'https://raw.githubusercontent.com/darui3018823/Thisisbot/refs/heads/main/Version_Infos/botver_240.json'
+
+API_KEY = os.getenv("Exchangerate_API_Token")  # 環境変数 "Exchangerate_API_Token" から取得
+API_URL = f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest"
 
 # WebSocket Pingを測定するための変数
 websocket_ping = None
@@ -73,6 +88,18 @@ ping_start_time = None
 authorized_users = load_permissions()
 commands_dict = load_commands_json()
 blacklist = load_blacklist()
+
+"""
+音楽再生関連は技術不足により延期です
+
+# 音声ファイルの保存ディレクトリ
+DOWNLOAD_DIR = "./vc/audios/"
+os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+# 音楽キュー
+music_queue = []
+vc = None
+"""
+
 
 # setup cog files
 async def setup_cogs():
@@ -89,10 +116,6 @@ async def setup_cogs():
 
         await bot.load_extension("cogs.iplookup_cog")
         print("iplookup_cog.py Load complete")
-
-        await bot.load_extension("cogs.quote")
-        print("quote.py Load complete")
-
 
     except Exception as e:
         print(f"An error occurred while loading cogs: {e}")
@@ -124,6 +147,7 @@ async def take_screenshot(url, tracking_id):
         return screenshot_path
     finally:
         driver.quit()
+
 
 # cmd list
 admincmdlist = [
@@ -176,7 +200,7 @@ everyonecmd = [
         "Powered by ipapi.",
         "- miq(beta)",
         "daruks!miq",
-        "Quoteを生成します。ベータ版です。",
+        "Quoteを生成します。",
         "- status",
         "daruks!status",
         "botのステータスを送信します。",
@@ -237,9 +261,20 @@ slashcmdlist = [
         "- track",
         "/track company:運送会社 track_id:追跡番号",
         "各サイトで検索を行いフルスクリーンショットを撮影し送信します。",
-        "- ytdl",
-        "/ytdl url:YouTube Video Url",
+        "- yt-dlp",
+        "/ytdl url:Video Url",
         "urlに渡されたurlをダウンロードします。",
+        "- calc",
+        "/calc expression: str",
+        "expressionの項目は式を入力してください。",
+        "- rate",
+        "/rate base:変換元 target:変換先",
+        "為替レートを取得、表示します。",
+        "- random",
+        "/random items: Item1 Item2",
+        "半角スペースで項目を入れてください。"
+        "/random files: File",
+        "filesにはファイルをアップロードしてください。`.txt`のみ利用可能です。",
         "- stop",
         "/stop",
         "botを停止させます。管理者のみ実行可能です",
@@ -248,20 +283,6 @@ slashcmdlist = [
         "botを再起動します。管理者のみ実行可能です"
         ]
 
-#解説
-This_Version_Info = [
-    "",
-    "✂︎------------------------------------------✂︎",
-    "",
-    " Version Information! :",
-    " - This Code Version: 2.4.0",
-    " - Development Stage: Pre-Release",
-    " - Release Date: 24/11/04 1:50",
-    " - Note: 重大なバグが潜んでるものだと思ってください",
-    "",
-    "✂︎------------------------------------------✂︎",
-    ""
-]
 
 # on_ready
 @bot.event
@@ -269,7 +290,13 @@ async def on_ready():
     logging.info('Bot is ready.')
     print("Log in Now...")
     print(f'Logged in as {bot.user}')
-    print("\n".join(This_Version_Info))
+    
+    version_info = fetch_version_info(version_url)
+    if version_info:
+        print(version_info)
+    else:
+        print("バージョン情報の取得に失敗しました。")
+        
     time.sleep(3)
     await bot.change_presence(activity=discord.CustomActivity("平和に逝こうよ～🥰 "))
     #online(通常及び規定)status=discord.Status.online
@@ -602,14 +629,16 @@ async def status(ctx):
         update_details = [
     "- コードのリリース形態をLatestに変更",
     "- 軽便なバグの修正",
-    "- コマンドの機能改善",
+    "- miqコマンドの調整",
+    "  - 詳細は[Releases](https://github.com/darui3018823/Thisisbot/releases)をご確認ください。"
     "- コードの機能改善",
-    "- 一部コマンドの仕様変更",
+    "- `/rate`, `/moyai`, `/calc`, `/random`コマンドの追加",
     "- ほぼ全てのスラッシュコマンドをユーザーインストールに対応",
     "  - 今後テキストコマンドは順次スラッシュコマンドに移植します。"
     ]
         know_issue  = [
-    "daruks!powershell, perm及びロギング関係が正常に動作しない不具合",
+    "- daruks!perm及びロギング関係が正常に動作しない不具合",
+    "  - Pre-Release 3で修正予定"
     
     ]
 
@@ -638,34 +667,33 @@ async def miq(ctx):
     # リプライ元のメッセージが存在するか確認
     if ctx.message.reference:
         try:
-            # リプライ元のメッセージを取得
-            original_message = await ctx.channel.fetch_message(ctx.message.reference.message_id)
-            
-            # リプライ元のメッセージのユーザーを取得
-            reply_user = original_message.author
-            guild = ctx.guild
-            
-            # ユーザーのアカウント名、表示名を取得
-            user_name = reply_user.name
-            display_name = reply_user.display_name
+            # idを取得
+            message_ID = ctx.message.reference.message_id
+            # Contentを取得
+            referenced_message = await ctx.channel.fetch_message(message_ID)
 
-            # サーバー上で個別設定されているアイコンのURLを生成
-            if reply_user.avatar:
-                if guild:
-                    # サーバー上で個別に設定されているアイコンの場合
-                    display_avatar_url = f"https://cdn.discordapp.com/guilds/{guild.id}/users/{reply_user.id}/avatars/{reply_user.avatar}.png?size=1024"
-                else:
-                    # アカウントの通常のアイコン
-                    display_avatar_url = reply_user.display_avatar.url
+            # 情報を取得
+            message_contents = referenced_message.content
+            user_avatar_url = referenced_message.author.display_avatar.url
+            user_name = referenced_message.author.name
+            user_display_name = referenced_message.author.display_name
+            
+            # display Avatar の処理
+            display_avatar_url = user_avatar_url or "https://cdn.discordapp.com/avatars/1258342490990182473/ab48ea947274af5adf7403b97cad68b0.png?size=1024"
+            
+            # message contents の処理
+            if not message_contents:
+                message_content = random.choice([':sunglasses:', '😎😎'])
             else:
-                display_avatar_url = 'https://example.com/default-avatar.png'
+                message_content = message_contents
 
             # デバッグ出力
-            print(f"User to send data: {display_name}")
-            print(f"Message: {original_message.content}")
+            print("------------")
+            print(f"User Name: {user_name}")
+            print(f"Message: {message_content}")
             print(f"Avatar URL: {display_avatar_url}")
-            print(f"User name: {user_name}")
-            print(f"Display name: {display_name}")
+            print(f"Display name: {user_display_name}")
+            print("------------")
 
             # APIのエンドポイントURL
             api_url = 'https://api.voids.top/quote'
@@ -680,8 +708,8 @@ async def miq(ctx):
                 # 取得した情報を新しいデータに追加
                 miqdata = {
                     'username': user_name,
-                    'display_name': display_name,
-                    'text': original_message.content if original_message else "No original message",
+                    'display_name': user_display_name,
+                    'text': message_content,
                     'avatar': display_avatar_url,
                     'color': True
                 }
@@ -702,24 +730,19 @@ async def miq(ctx):
                         image_url = response_data['url']
                         print(f"Image URL: {image_url}")
 
-                        # 画像データを取得してリプライ
-                        image_response = requests.get(image_url)
-                        if image_response.status_code == 200:
-                            image_data = BytesIO(image_response.content)
-                            file = discord.File(image_data, filename="quote_image.png")
-                            await ctx.send(f"Quote Picture(This Command is beta.): {file}")
-                        else:
-                            await ctx.send(f"画像の取得に失敗しました: {image_response.status_code}")
+                        # URLをそのままリプライ
+                        await ctx.reply(f"{image_url}")
                     else:
-                        await ctx.send("画像URLが返されませんでした。")
+                        await ctx.reply("画像URLが返されませんでした。")
                 else:
-                    await ctx.send(f"データ送信中にエラーが発生しました: {post_response.status_code}")
+                    await ctx.reply(f"データ送信中にエラーが発生しました: {post_response.status_code}")
             else:
-                await ctx.send(f'データ取得中にエラーが発生しました: {response.status_code}')
+                await ctx.reply(f'データ取得中にエラーが発生しました: {response.status_code}')
         except Exception as e:
-            await ctx.send(f"エラーが発生しました: {str(e)}")
+            await ctx.reply(f"エラーが発生しました: {str(e)}")
     else:
-        await ctx.send("リプライ元のメッセージが見つかりません。")
+        await ctx.reply("リプライ元のメッセージが見つかりません。")
+
 
 # daruks!invite
 @bot.command(name="invite")
@@ -898,12 +921,8 @@ async def shutdown(ctx):
         await ctx.send("You do not have permission to use this command!")
 
 
-# slash cmd
-# /test
-@bot.tree.command(name='test', description='slash command test')
-async def test(interaction: discord.Interaction):
-    await interaction.response.send_message('Hello World')
 
+# slash cmd
 # /cmdlist
 @bot.tree.command(name="cmdlist", description="コマンドリストとその説明")
 @app_commands.describe(option="Arguments in the command list to send (e.g., 1, 2, 3, all, prefix, slash, help)")
@@ -1009,7 +1028,6 @@ async def restart(interaction: discord.Interaction):
     print(f"Bot Run Time: {formatted_time}")
     await bot.close()
     script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'restart.bat')
-    await bot.close()
     os.system(f'"{script_path}"')
 
 # /ping
@@ -1113,21 +1131,15 @@ async def userinfo_command(interaction: discord.Interaction, user: discord.User 
     if user is None:
         user = interaction.user
 
-    # user が None でないことを確認する
-    if user is None:
-        await interaction.response.send_message("Could not find user information.")
-        return
+    embed = await get_user_info_embed(interaction, user)
+    await interaction.response.send_message(embed=embed)
 
-    # サーバープロフィールのアイコンを取得
-    display_avatar_url = user.display_avatar.url
-    user_info = (
-        f"Username: {user.name}\n"
-        f"ID: {user.id}\n"
-        f"Created at: {user.created_at}\n"
-        f"Avatar URL: {display_avatar_url}"
-    )
-    print(display_avatar_url)
-    await interaction.response.send_message(user_info)
+# userinfo
+@bot.tree.context_menu(name="View Profile")
+@allowed_installs(guilds=True, users=True)
+async def view_profile(interaction: discord.Interaction, user: discord.User):
+    embed = await get_user_info_embed(interaction, user)
+    await interaction.response.send_message(embed=embed)
 
 # /active-dev
 @bot.tree.command(name="active-dev", description="Discord Active Developer Badgeの取得ページを表示します")
@@ -1328,93 +1340,6 @@ async def pc_status(interaction: discord.Interaction):
     await interaction.edit_original_response(embed=Send_embed)
     print("Sent PC Status")
 
-# userinfo
-@bot.tree.context_menu(name="View Profile")
-@allowed_installs(guilds=True, users=True)
-async def view_profile(interaction: discord.Interaction, user: discord.User):
-    # サーバープロフィールのアイコンを取得
-    display_avatar_url = user.display_avatar.url
-    user_info = (
-        f"Username: {user.name}\n"
-        f"Display Name: {user.display_name}\n"
-        f"ID: {user.id}\n"
-        f"Created at: {user.created_at}\n"
-        f"Avatar URL: {display_avatar_url}"
-    )
-    print(display_avatar_url)
-    await interaction.response.send_message(user_info)
-
-# interlaction miq
-@bot.tree.context_menu(name="Quote Message")
-@allowed_installs(guilds=True, users=True)
-async def quote(interaction: discord.Interaction, message: discord.Message):
-    # メッセージのリプライ先を取得
-    if message is None:
-        await interaction.response.send_message("返信するメッセージを指定してください。")
-        return
-
-    # ユーザーのアカウント名、表示名、アイコンURLを取得
-    user = message.author
-    user_name = user.name
-    display_name = user.display_name
-    display_avatar_url = user.display_avatar.url if user.display_avatar else 'https://example.com/default-avatar.png'
-
-    # デバッグ出力
-    print(f"User to send data: {display_name}")
-    print(f"Avatar URL: {display_avatar_url}")
-    print(f"User name: {user_name}")
-    print(f"Display name: {display_name}")
-    print(f"Message Content: {message.content}")
-
-    # APIのエンドポイントURL
-    api_url = 'https://api.voids.top/quote'
-    print(f"API URL: {api_url}")
-
-    # 取得した情報を新しいデータに追加
-    miqdata = {
-        'username': user_name,
-        'display_name': display_name,
-        'text': message.content,  # リプライ元のメッセージ内容
-        'avatar': display_avatar_url,
-        'color': True
-    }
-
-    # JSONデータを指定された形式に合わせて整形
-    headers = {'Content-Type': 'application/json'}
-    post_response = requests.post(api_url, json=miqdata, headers=headers)
-    
-    if post_response.status_code == 201:
-        response_data = post_response.json()
-        if 'url' in response_data:
-            image_url = response_data['url']
-            print(f"Image URL: {image_url}")
-
-            # 画像データを取得してリプライ
-            image_response = requests.get(image_url)
-            if image_response.status_code == 200:
-                image_data = BytesIO(image_response.content)
-                file = discord.File(image_data, filename="quote_image.png")
-                await interaction.response.send_message(content="Quote Picture(This Command is beta.):", file=file)
-            else:
-                await interaction.response.send_message(f"画像の取得に失敗しました: {image_response.status_code}")
-        else:
-            await interaction.response.send_message("画像URLが返されませんでした。")
-    else:
-        await interaction.response.send_message(f"データ送信中にエラーが発生しました: {post_response.status_code}")
-
-
-# 考え中のテスト
-@bot.tree.command(name="thinktest")
-async def thinktest(interaction: discord.Interaction):
-    # 最初に「考え中...」メッセージを送信
-    await interaction.response.send_message(f"{bot.user.name}が考え中...")
-
-    # 少し待つ（例えば、2秒待機）
-    await asyncio.sleep(2)
-
-    # メッセージを更新
-    await interaction.edit_original_response(content="考えがまとまりました！")
-
 # /track
 @bot.tree.command(name="track", description="Track a package")
 @app_commands.describe(
@@ -1576,9 +1501,16 @@ async def site_sc(interaction: discord.Interaction, url: str, sc_option: str = N
 @bot.tree.command(name="yt-dlp", description="Running yt-dlp.exe")
 @allowed_installs(guilds=True, users=True)
 @app_commands.describe(url="Video URL, 値を入力せずに送信するとヘルプを見ることができます。")
-async def youtube_download(interaction: discord.Interaction, url: str = None):
+async def youtube_download(interaction: discord.Interaction, url: str = None):        
     if url is None:
         await HelpMessage_Embed(interaction)
+        return
+    
+    omguser = str(interaction.user.id) 
+    print(omguser)
+    if omguser not in authorized_users.values():
+        print("OMG... COME'IN FUCK USER")
+        await FUCKYOU(interaction)
         return
     
     RunningUser = interaction.user
@@ -1600,7 +1532,7 @@ async def youtube_download(interaction: discord.Interaction, url: str = None):
 @allowed_installs(guilds=True, users=True)
 async def download_youtube_video(interaction: discord.Interaction, message: discord.Message):
     url = extract_first_url(message.content)  # メッセージの内容からURLを抽出
-    
+        
     if url is None:
         # 対応していないURLの場合のエラーメッセージを埋め込みで送信
         error_embed = discord.Embed(
@@ -1618,6 +1550,15 @@ async def download_youtube_video(interaction: discord.Interaction, message: disc
                               )
         error_embed.set_footer(text="Powered by yt-dlp, ffmpeg")
         await interaction.response.send_message(embed=error_embed)
+        return
+    
+    # perm.jsonに記載のあるユーザーのみの実行可能
+    omguser = str(interaction.user.id) 
+    print(omguser)
+    
+    if omguser not in authorized_users.values():
+        print("OMG... COME'IN FUCK USER")
+        await FUCKYOU(interaction)
         return
     
     # Eドライブの容量処理
@@ -1639,8 +1580,8 @@ async def download_youtube_video(interaction: discord.Interaction, message: disc
 @bot.tree.command(name="random", description="入力された値をランダムで抽選します。")
 @allowed_installs(guilds=True, users=True)
 @app_commands.describe(
-    items="スペース区切りを利用してください。スペースのある単語は""で囲んでください。",
-    file="スペース区切りを利用してください。スペースのある単語は""で囲んでください。"
+    items="スペース区切りを利用してください。スペースのある単語はダブルクォーテーションで囲んでください。",
+    file="スペース区切りを利用してください。スペースのある単語はダブルクォーテーションで囲んでください。"
 )
 async def random_command(interaction: Interaction, items: Optional[str] = None, file: Optional[Attachment] = None):
     
@@ -1670,6 +1611,78 @@ async def random_command(interaction: Interaction, items: Optional[str] = None, 
         await interaction.send_message("なんでこのエラーが出るのかまじでわからんなぁ")
         return
         
+# /calc
+@bot.tree.command(name="calc", description="入力された式に従って四則演算を行います")
+@allowed_installs(guilds=True, users=True)
+@app_commands.describe(expression="計算したい式を入力します（例: 3 + 5 * 2）")
+async def calc(interaction: discord.Interaction, expression: str):
+    try:
+        result = safe_eval(expression)
+        replase_expre = expression.replace("××", "^").replace("**", "^").replace("×", "*").replace("÷", "/")
+        await interaction.response.send_message(f"計算結果: {replase_expre} = {result}")
+    except ValueError as e:
+        await interaction.response.send_message(str(e), ephemeral=True)
+    except Exception as e:
+        await interaction.response.send_message("エラーが発生しました。入力を確認してください。", ephemeral=True)
+        print(e)
+
+# /moyai
+@bot.tree.command(name="moyai", description="Let's Moyai :)")
+@allowed_installs(guilds=True, users=True)
+async def moyai(interaction: Interaction):
+    a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 20]
+    count = random.choice(a)
+    moyai_string = "\n".join([":moyai:" for _ in range(count)])
+    await interaction.response.send_message(moyai_string)
+
+# /rate
+@bot.tree.command(name="rate", description="為替レートを表示します")
+@app_commands.describe(
+    base="基準通貨 (例: USD, EUR)",
+    target="対象通貨 (例: JPY, GBP)"
+)
+async def rate(interaction: discord.Interaction, base: str, target: str):
+    initial_message = await interaction.response.send_message("Making request to API... Please wait...", ephemeral=True)
+
+    # APIにリクエストを送信
+    try:
+        response = requests.get(f"{API_URL}/{base}")
+        data = response.json()
+
+        if response.status_code != 200:
+            await interaction.followup.send("エラーが発生しました。もう一度試してください。")
+            return
+
+        # 日付を取得 (YYYY/MM/DD形式)
+        date_today = date.today().strftime("%Y/%m/%d")
+
+        # レートを取得
+        if target in data['conversion_rates']:
+            rate = data['conversion_rates'][target]
+
+            # Embedメッセージ作成
+            embed = discord.Embed(
+                title=f"{base} → {target} 為替レート",
+                description=f"{base} と {target} の最新の為替レートを表示します。",
+                color=0x00ff00
+            )
+            
+            # 1 [base] = [rate] [target] というフォーマットでレートを表示
+            rate_message = f"1 {base} = {rate} {target}"
+
+            embed.add_field(name="為替レート", value=rate_message, inline=False)
+            embed.add_field(name="日付", value=date_today, inline=True)  # 当日の日付を追加
+            embed.add_field(name="基準通貨", value=f"{base}", inline=True)
+            embed.add_field(name="対象通貨", value=f"{target}", inline=True)
+            embed.set_footer(text="為替レート情報提供元: ExchangeRate-API")
+            
+            # 初期メッセージを更新してEmbedメッセージを送信
+            await initial_message.edit(content="Here is the exchange rate:", embed=embed)
+        else:
+            await interaction.followup.send(f"{base} から {target} へのレートは見つかりませんでした。")
+    
+    except Exception as e:
+        await interaction.followup.send(f"為替レートの取得中にエラーが発生しました: {e}")
 
 
 
