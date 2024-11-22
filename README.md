@@ -50,7 +50,7 @@ Discord上で以下のコマンドを実行していただければと思いま�
 - `/cmdlist all`
 
 ## ライセンス
-このプロジェクトは [GNU General Public License v3](https://github.com/darui3018823/Thisisbot?tab=License-1-ov-file) の下で提供されています。  
+このプロジェクトは [GNU General Public License v3](https://github.com/darui3018823/Thisisbot/blob/main/LICENSE) の下で提供されています。  
 GPLv3に基づき、以下の条件が適用されます。
 
 1. **改変について**  
@@ -91,7 +91,7 @@ MITライセンスなどの特定の記載がある場合を除き、README.md�
 ## 関連ファイル
 - [利用規約](https://github.com/darui3018823/Thisisbot/blob/main/Terms-of-Service.md)
 - [プライバシーポリシー](https://github.com/darui3018823/Thisisbot/blob/main/Privacy-Policy.md)
-- [MITライセンス](https://github.com/darui3018823/Thisisbot?tab=License-1-ov-file)
+- [GNU General Public License v3.0](https://github.com/darui3018823/Thisisbot/blob/main/LICENSE)
 - [サポートバージョン](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md)
 <br>
 
