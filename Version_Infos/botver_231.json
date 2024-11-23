@@ -1,0 +1,21 @@
+{
+    "1": "",
+    "2": "✂︎------------------------------------------✂︎",
+    "3": "",
+    "4": " Version Information! :",
+    "5": " - This Code Version: 2.3.1",
+    "6": " - Development Stage: Latest",
+    "7": " - Release Date: 24/10/21 2:00",
+    "8": " - Note: This version is the final release of the 2.3.x series.",
+    "9": " - Upcoming Version: Planned for 2.4.0",
+    "10": " - Upcoming Features: A command to play music and other audio in voice chat channels.",
+    "11": "",
+    "12": "✂︎------------------------------------------✂︎",
+    "13": "",
+    "14": "There may be frequent errors as this is not a typical operating environment.",
+    "15": "Please ensure that FFmpeg and other necessary packages are fully installed.",
+    "16": "The items used in this code are as follows. If needed, please paste them directly as pip commands.",
+    "17": "pip install discord httpcore ipinfo pytz requests googletrans psutil wmi GPUtil Pillow selenium setuptools",
+    "18": "",
+    "19": "✂︎------------------------------------------✂︎"
+}
