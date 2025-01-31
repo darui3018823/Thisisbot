@@ -79,7 +79,8 @@ GPLv3に基づき、以下の条件が適用されます。
 - ホームページ: [https://daruks.com/contact](https://daruks.com/contact)
 - Twitter: [@darui3018823](https://twitter.com/darui3018823)
 - Discord:
-  - This is botに`daruks!contact`を送信し、手順に沿ってお進みください。
+  - ~~This is botに`daruks!contact`を送信し、手順に沿ってお進みください。~~
+    - `daruks!contact`が廃止されましたので、`/contact`よりお問い合わせください
   - @darui3018823まで直接お問い合わせください。
 
 サポートは全てのバージョンで行いますが、2.0以前のバージョンに関するIssueは一切受け付けることができません。<br>
@@ -96,4 +97,4 @@ GPLv3に基づき、以下の条件が適用されます。
 <br>
 
 ## 最終更新日
-2024/11/22 10:50
+2025/02/01 04:00 (JST)
