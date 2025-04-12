@@ -29,7 +29,7 @@ This bot primarily utilizes the `discord.py` library, along with the following l
 - `wmi` – Windows Management Instrumentation (Windows only)
 
 ### 🧪 Developer Utilities
-- `[jishaku](https://github.com/scarletcafe/jishaku)` – Developer/debugging tools for Discord bots
+- [`jishaku`](https://github.com/scarletcafe/jishaku) – Developer/debugging tools for Discord bots
 
 ### 🌐 Browser Automation
 - `selenium` – Web browser automation (Firefox/WebDriver support)
