@@ -78,4 +78,40 @@ This bot primarily utilizes the `discord.py` library, along with the following l
 
 All copyrights and rights related to these libraries belong to their respective authors and stakeholders.
 </details>
+<br>
 
+## 🧰 Required Tools & Runtime / 必須ツール・実行環境
+<details>
+<summary>🇯🇵 日本語版（クリックで展開）</summary>
+
+以下のツールは本プロジェクトにおいて使用されています。  
+それぞれの著作権およびライセンスは、各制作者または団体に帰属します。  
+これらのツールのライセンスと本ソースコード（GPL-3.0）のライセンスに矛盾がある場合は、  
+**各ツールのライセンスが許容する範囲内で**本ソースコードのライセンスが優先されます。
+
+| ツール名       | 用途                                       | 制作者・団体名                       |
+|----------------|--------------------------------------------|--------------------------------------|
+| [Python 3.12.7](https://www.python.org/)  | 実行環境の基盤となるPython本体               | Python Software Foundation          |
+| [yt-dlp](https://github.com/yt-dlp/yt-dlp)         | 動画等の取得に使用するダウンローダー | yt-dlp contributors                 |
+| [ffmpeg](https://www.ffmpeg.org/)         | 音声・映像の変換・処理                       | FFmpeg team                         |
+| [ffmpeg Windows builds from gyan.dev](https://www.gyan.dev/ffmpeg/builds/)     | ffmpegのWindows向け配布バイナリ                 | Gyan Doshi |
+| [GeckoDriver](https://github.com/mozilla/geckodriver)    | FirefoxブラウザをSeleniumで操作するためのWebDriver | Mozilla Foundation                  |
+
+</details>
+<details>
+<summary>🇬🇧 English Version (Click to expand)</summary>
+
+The following tools are used as part of this project.  
+All rights and associated licenses belong to the respective authors or organizations.  
+If there are any conflicts between their licenses and the license of this source code (GPL-3.0),  
+this source's license will apply **only to the extent permitted by each tool's own license**.
+
+| Tool          | Purpose                                      | Author / Organization               |
+|---------------|----------------------------------------------|--------------------------------------|
+| Python 3.12.7 | Main runtime environment                     | Python Software Foundation          |
+| yt-dlp        | Media downloader for handling online content | yt-dlp contributors                 |
+| ffmpeg        | Media processing and conversion              | FFmpeg team                         |
+| [ffmpeg Windows builds from gyan.dev](https://www.gyan.dev/ffmpeg/builds/) | Prebuilt binaries for Windows (ffmpeg)       | Gyan Doshi |
+| GeckoDriver   | Firefox WebDriver used by Selenium           | Mozilla Foundation                  |
+
+</details>
