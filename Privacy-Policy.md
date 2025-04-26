@@ -5,11 +5,11 @@
 
 ## 警告/Caution!
 Ja:<br>
-このリポジトリのv2.4.0 Pre-Release v3よりプライバシーポリシーは[こちら](https://bot.daruks.com/legal/privacy-policy/)へ移行しました。<br>
+このリポジトリのVer.2.4.0 Releace Candidate v1よりプライバシーポリシーは[こちら](https://bot.daruks.com/legal/privacy-policy/)へ移行しました。<br>
 本規約はそれ以前のバージョンに適用されます。<br>
 
 En:<br>
-The Privacy Policy of Use have been moved [here](https://bot.daruks.com/legal/privacy-policy/) starting with v2.4.0 Pre-Release v3 of this repository.<br>
+The Privacy Policy of Use have been moved [here](https://bot.daruks.com/legal/privacy-policy/) starting with Ver.2.4.0 Releace Candidate v1 of this repository.<br>
 This agreement applies only to earlier versions.<br>
 
 <br>
