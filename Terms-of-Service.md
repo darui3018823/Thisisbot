@@ -2,7 +2,7 @@
 
 ## 警告/Caution!
 Ja:<br>
-このリポジトリのVer.2.4.0 Releace Candidate v1より利用規約は[こちら](https://bot.daruks.com/legal/terms-of-service/)へ移行しました。<br>
+このリポジトリのVer.2.6.0より利用規約は[こちら](https://bot.daruks.com/legal/terms-of-service/)へ移行しました。<br>
 本規約はそれ以前のバージョンに適用されます。<br>
 
 En:<br>
