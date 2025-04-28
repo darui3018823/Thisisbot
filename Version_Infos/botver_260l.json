@@ -1,0 +1,21 @@
+{
+    "1": "---------------------------------------------",
+    "2": "",
+    "3": "Version Information!",
+    "4": "- This Code Version: 2.6.0",
+    "5": "- Development Stage: Latest Release",
+    "6": "- Release Date: 2025/04/28",
+    "7": "- Note: Some minor bugs may still be present.",
+    "8": "",
+    "9": "We have added new slash commands:",
+    "10": "- `/ask`",
+    "11": "- `/github`",
+    "12": "- `/pip`",
+    "13": "and improved `/yt-dlp` functionality.",
+    "14": "- Also, code structure has been modified for better maintenance.",
+    "15": "",
+    "16": "Known Issues:",
+    "17": "- An `HTTP Status Code 521` error may occur when using `/ask`.",
+    "18": "",
+    "19": "---------------------------------------------"
+}
