@@ -1,0 +1,22 @@
+{
+    "1": "---------------------------------------------",
+    "2": "",
+    "3": "Bot Version Information",
+    "4": "- Version: 2.4.0 Release Candidate (PRv4)",
+    "5": "- Minor bug fixes",
+    "6": "- Complete overhaul of the Shell Executor",
+    "7": "- Complete overhaul of the Python Executor",
+    "8": "- Improvements and removals of some commands",
+    "9": "- Added and improved music-related commands",
+    "10": "  - See [Releases](https://github.com/darui3018823/Thisisbot/releases/tag/2.4.0_RC1) for more details.",
+    "11": "- Code enhancements",
+    "12": "- (For Debugging) Migrated prefix handling to the Logging module",
+    "13": "",
+    "14": "Known Issues",
+    "15": "- Issues with daruks!perm and logging features not working properly",
+    "16": "  - **Undecided**",
+    "17": "    - Please refer to the \"Other\" section of [Releases](https://github.com/darui3018823/Thisisbot/releases/tag/2.4.0_PR3).",
+    "18": "",
+    "19": "The tag has changed significantly, so if you have cloned the repository, please check the URL.",
+    "20": "---------------------------------------------"
+}
