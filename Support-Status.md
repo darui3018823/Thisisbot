@@ -82,14 +82,32 @@ This is bot Source Code(以下「本コード」)のサポート内容は以下�
 <br>   
 
 ### v2.4.x
-- v2.4.0-PR
+- v2.4.0-PR vx
   - サポート状況: Pre-Release(PR)
-  - リリース日: 24/11/04
-  - 主な機能等: [こちら](https://github.com/darui3018823/Thisisbot/releases/tag/2.4.0)をご確認ください。
+  - リリース日: [v2.4.0-pr1](https://github.com/darui3018823/Thisisbot/releases/tag/2.4.0_PR1), [v2.4.0](https://github.com/darui3018823/Thisisbot/releases/tag/2.4.0), [v2.4.3](https://github.com/darui3018823/Thisisbot/releases/tag/2.4.3)
+  - 主な機能等: それぞれのページをご確認ください。
     - 備考:
       - 本バージョンはPre-Releaseです。どんなバグが起きてもおかしくないです。
       - 本バージョンのLatest化は**2024年内を目標にしておりますが**できないかもしれないですね。
-      - 本バージョンのサポート終了はまだ予定されていません。
+      - 本バージョンのサポート終了は2027年度まで行います。
+     
+### v2.5.0
+- v2.5.0 Stable
+  - サポート状況: Stable(LTS)
+  - リリース日: 25/04/28
+  - 主な機能等: [こちら](https://github.com/darui3018823/Thisisbot/releases/tag/2.5.0)をご確認ください。
+    - 備考:
+      - 本バージョンのLTS化に伴い、v2.3.1は打ち切りになる可能性があります.
+      - サポート終了予定はございません。
+     
+### v2.6.0
+- v2.6.0 Latest
+  - サポート状況: Latest
+  - リリース日:25/05/02
+  - 主な機能等: [こちら](https://github.com/darui3018823/Thisisbot/releases/tag/2.6.0)をご確認ください。
+    - 備考:
+      - v2.4.3以前をお使いの方はこちらのコードへのアップデート的なのをお願いいたします。
+      - サポート終了予定はございません。
   
 ## 注意事項
 - Stable
@@ -107,4 +125,4 @@ This is bot Source Code(以下「本コード」)のサポート内容は以下�
 <br>
 
 ## 最終更新
-24/11/04 4:20(JST)
+25/05/03 0:00(JST)
