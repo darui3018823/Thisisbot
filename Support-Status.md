@@ -11,6 +11,9 @@
   - [v2.0.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v20x)
   - [v2.3.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v23x)
   - [v2.4.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v24x)
+  - [v2.5.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v25x)
+  - [v2.6.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v26x)
+  - [v2.7.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v27x)
 - [注意事項](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85)
 - [最終更新](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#%E6%9C%80%E7%B5%82%E6%9B%B4%E6%96%B0)
 <br>
@@ -108,6 +111,15 @@ This is bot Source Code(以下「本コード」)のサポート内容は以下�
     - 備考:
       - v2.4.3以前をお使いの方はこちらのコードへのアップデート的なのをお願いいたします。
       - サポート終了予定はございません。
+     
+### v2.7.0
+- v2.7.0 Latest
+  - サポート状況: Latest
+  - リリース日:2025/06 予定
+  - 主な機能等: [こちら](https://github.com/darui3018823/Thisisbot/releases/tag/2.7.0)をご確認ください。
+    - 備考:
+      - `requirements.txt`を更新しましたのでご利用ください。
+      - サポート終了予定はございません。
   
 ## 注意事項
 - Stable
@@ -125,4 +137,4 @@ This is bot Source Code(以下「本コード」)のサポート内容は以下�
 <br>
 
 ## 最終更新
-25/05/03 0:00(JST)
+25/06/13 18:30(JST)
