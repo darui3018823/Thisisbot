@@ -11,9 +11,9 @@
   - [v2.0.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v20x)
   - [v2.3.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v23x)
   - [v2.4.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v24x)
-  - [v2.5.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v25x)
-  - [v2.6.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v26x)
-  - [v2.7.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v27x)
+  - [v2.5.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v250)
+  - [v2.6.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v260)
+  - [v2.7.x](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#v270)
 - [注意事項](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85)
 - [最終更新](https://github.com/darui3018823/Thisisbot/blob/main/Support-Status.md#%E6%9C%80%E7%B5%82%E6%9B%B4%E6%96%B0)
 <br>
