@@ -1,0 +1,23 @@
+{
+    "1": "---------------------------------------------",
+    "2": "",
+    "3": "Version Information!",
+    "4": "- This Code Version: 2.7.0",
+    "5": "- Development Stage: Latest Release",
+    "6": "- Release Date: 2025/6/13 at later",
+    "7": "- Note: Some minor bugs may still be present.",
+    "8": "",
+    "9": "We have added new slash commands:",
+    "10": "- `/itunes`",
+    "11": "- `/ytm`",
+    "12": "and improved `/yt-dlp` functionality.",
+    "13": "`/yt-dlp` is temporarily using the C drive due to a problem with the provider.",
+    "14": "- `/ask` command has been enhanced.",
+    "15": "- And some functions have been improved, modified, and integrated.",
+    "16": "",
+    "17": "Known Issues:",
+    "18": "- Due to an issue with YouTube Music, some albums are provided as playlists on `/ytm`.",
+    "19": "- We are currently considering how to address this issue.",
+    "20": "",
+    "21": "---------------------------------------------"
+}
