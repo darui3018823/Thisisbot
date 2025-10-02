@@ -1,3 +1,0 @@
-@echo off
-echo The System will in 10sec...
-shutdown /s /t 10
